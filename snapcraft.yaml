@@ -1,6 +1,6 @@
 name: witchcraft-cybersecurity
-version: "0.33.700"
-summary: Your OPSEC companion!
+version: "0.34.10"
+summary: Your OPSEC companion. Now with tldr-pages integration!
 grade: stable
 confinement: strict
 base: core24

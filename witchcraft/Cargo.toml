@@ -1,10 +1,10 @@
 [package]
 name = "witchcraft"
-version = "0.33.700"
+version = "0.34.10"
 edition = "2021"
 readme = "README.md"
 homepage = "https://cosmic-zip.github.io/wiki/wiki.html"
-repository = "https://github.com/cosmic-zip/witch_craft"
+repository = "https://github.com/cosmic-zip/witchcraft"
 keywords = ["cli", "hacking", "pentest", "security"]
 categories = ["command-line-utilities"]
 
