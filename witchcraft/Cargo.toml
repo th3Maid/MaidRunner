@@ -1,10 +1,10 @@
 [package]
 name = "witchcraft"
-version = "0.33.700"
+version = "0.34.10"
 edition = "2021"
 readme = "README.md"
 homepage = "https://cosmic-zip.github.io/wiki/wiki.html"
-repository = "https://github.com/cosmic-zip/witch_craft"
+repository = "https://github.com/cosmic-zip/witchcraft"
 keywords = ["cli", "hacking", "pentest", "security"]
 categories = ["command-line-utilities"]
 
@@ -20,6 +20,7 @@ serde = { version = "1.0.204", features = ["derive"] }
 serde_json = "1.0.122"
 sha256 = "1.5.0"
 sysinfo = "0.32.0"
+termimad = "0.31.1"
 
 [profile.release]
 codegen-units = 1

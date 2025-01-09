@@ -8,7 +8,7 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/cosmic-zip/witchcraft)
 
 <p align="center">
-  🎉 Welcome to the witchcraft Community!
+  🎉 Your OPSEC companion. Now with tldr-pages integration! 🎉
 </p>
 
 ---
