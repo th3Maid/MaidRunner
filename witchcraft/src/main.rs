@@ -7,6 +7,7 @@ use modules::{
     network::network,
     osint::osint,
     social::social,
+    tldr::tldr,
 };
 
 mod core;
@@ -27,6 +28,7 @@ fn main() {
     join_closures.extend(network::api());
     join_closures.extend(osint::api());
     join_closures.extend(social::api());
+    join_closures.extend(tldr::api());
 
     if arg_name == "help" || arg_name == "h" {
         magic_docs();
