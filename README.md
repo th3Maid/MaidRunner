@@ -2,6 +2,7 @@
 
 ![banner](docs/documentation/images/lineBar.png)
 
+[![witchcraft-cybersecurity](https://snapcraft.io/witchcraft-cybersecurity/badge.svg)](https://snapcraft.io/witchcraft-cybersecurity)
 ![witchcraft](https://img.shields.io/github/actions/workflow/status/cosmic-zip/witchcraft/witchcraft.yml)
 ![GitHub issues](https://img.shields.io/github/issues/cosmic-zip/witchcraft)
 ![GitHub License](https://img.shields.io/github/license/cosmic-zip/witchcraft)
