@@ -371,6 +371,11 @@
             "command": "curl -X POST -H \"Content-Type: application/json\" -d '{\"main\": \"somename\", \"@@message\": \"somemsg\"}' @@domain"
         },
         {
+            "name": "tldr",
+            "description": "The tldr command is a collection of community-maintained help pages for command-line tools from the tldr-pages project, that aims to be a simpler, more approachable complement to traditional man pages.",
+            "command": "tldr @@page"
+        },
+        {
             "name": "maidz",
             "description": "An cute cat girl tells you basic system information like neofetch",
             "command": "maidz"
