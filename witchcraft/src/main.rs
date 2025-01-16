@@ -34,6 +34,11 @@ fn main() {
         magic_docs();
     }
 
+    if arg_name == "manual" || arg_name == "h" {
+        raise(MAN_HEADER, "");
+        magic_docs();
+    }
+
     if arg_name == "version" || arg_name == "v" {
         show_version();
     }
