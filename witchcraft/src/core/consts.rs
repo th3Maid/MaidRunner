@@ -109,6 +109,31 @@ INSTALATION
         find dist folder; unzip de the file and and find
         the installer.sh and uninstall.sh.
 
+        The script will prompt you to enter the root password, create a folder called
+        'release,' and place the built executables inside it. Additionally, it will
+        prompt you to run the commands for downloading the archive files for OSINT and
+        wordlists. You can choose to download one, both, or neither, but keep in mind
+        that the archives are required for ip lookup operations.
+
+
+    The spellbook package provide:
+
+        * Unique Wordlists : _moth_ (16Gb) and _ladybug_ (1Gb)
+        * Default Credentials Database
+        * IP Geolocation
+        * IP Reputation/Score
+        * A Set of Social Media Pages for Evil Twin Attacks
+        * General Wordlists for Directories and Subdomains
+        * MAC Address Vendor Database
+        * Usernames Wordlist
+        * XSS Wordlist
+        * And more, UwU!
+
+    Wordlists and Malware sigs are too big 700Mb so, if you want or need then
+    just run:
+
+    git clone https://github.com/cosmic-zip/witchcraft-wordlists /var/spellbook/
+
 
 EVILPAGES
     Put your cloned pages in /var/spellbook/evilpages. Use the SingleFile extension
@@ -194,6 +219,10 @@ PLUGINS
     Repeating a flag will not create a list of values. If a flag is repeated,
     only the first occurrence will be accepted. This design covers 98% of CLI
     interactions. Edge cases are not supported.
+
+LICENSE AND TERMS
+    This project is licensed under the GNU General Public License v3.0.
+    WITCHCRAFT includes IP2Proxy® LITE and cinsscore® databases
 
 COMMANDS
 "#;
