@@ -9,141 +9,154 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/cosmic-zip/witchcraft)
 
 <p align="center">
-  🎉 Your OPSEC companion. Now with tldr-pages integration! 🎉
+  🎉 Your OPSEC companion. Run witchcraft help or witchcraft manual (for the complete manual) 🎉
 </p>
 
 ---
 
-### WITCHCRAFT
+# NAME
+**witchcraft** - A versatile toolkit for cybersecurity.
 
-WITCHCRAFT is a toolkit for cybersecurity. It handles forensic research, OSINT, scanning, backups, data copying, and penetration testing for apps and APIs, serving as a flexible platform for diverse security tasks.
+# SYNOPSIS
+`witchcraft [MODULE_NAME] [OPTION]... [FILE]... [IP]...`
 
-### Visit the wiki:
+# DESCRIPTION
+WITCHCRAFT is a powerful cybersecurity toolkit providing tools for forensic analysis, OSINT, scanning, backups, data copying, and penetration testing for applications and APIs. Its flexibility makes it suitable for a wide range of security tasks.
 
-https://cosmic-zip.github.io/wiki/wiki.html
+# EXAMPLES
+- `witchcraft map.local`  
+  Map all open local connections.
 
-### Instalation
+- `witchcraft search.meta --keyword user_name`  
+  Search for the `user_name` keyword across over 1000 sites.
 
-The project initially includes a set of default files. These files
-are created using the best possible data analysis techniques, and
-their final versions are merged into the main project.
+- `witchcraft map.default --target example.com`  
+  Perform a default port scan on the specified target.
 
-The spellbook package also provide:
+# INSTALLATION
+The project initially includes a set of default files created using advanced data analysis techniques. Final versions are merged into the main project.
 
--   **Advanced osint search in over 1000 sources**
--   **Default Credentials Database**
--   **IP Lookup**
--   **A Set of Social Media Pages for Evil Twin Attacks**
--   **General Wordlists for Directories and Subdomains**
--   **MAC Address Vendor Database**
--   **Usernames Wordlist**
--   **XSS Wordlist**
--   **And more, UwU!**
+- **GitHub Installation:**  
+  Visit [witchcraft GitHub repository](https://github.com/cosmic-zip/witchcraft).  
+  Go to releases, download the latest version, unzip the file, and locate `installer.sh` and `uninstall.sh`.  
 
--   **Unique Wordlists**:
+  ```bash
+  sudo bash installer.sh
+  ```
 
-    -   _Moth_
-    -   _Ladybug_
+- **Snap Package Installation:**  
+  ```bash
+  snap install witchcraft-cybersecurity
+  ```
 
-### Install using snap
+- **Build from Source:**  
+  ```bash
+  git clone https://github.com/cosmic-zip/witchcraft
+  cd witchcraft
+  sudo bash build-devel.sh
+  ```
 
-<p class=center>
-  <a href="https://snapcraft.io/witchcraft-cybersecurity">
-    <img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" />
-  </a>
-</p>
+  Locate the `dist` folder, unzip the file, and use `installer.sh` and `uninstall.sh`.
 
-#### After installed add a snap alias:
+  The script prompts for root access, creates a `release` folder, and places built executables inside. It also provides options for downloading archives for OSINT and wordlists required for IP lookup operations.
 
-```console
-sudo snap alias witchcraft-cybersecurity.witchcraft witchcraft
-```
+## Spellbook Package Includes:
+- Unique Wordlists: _moth_ (16GB) and _ladybug_ (1GB)
+- Default Credentials Database
+- IP Geolocation and Reputation/Score
+- Social Media Pages for Evil Twin Attacks
+- General Wordlists for Directories and Subdomains
+- MAC Address Vendor Database
+- Usernames Wordlist
+- XSS Wordlist
+- And more!
 
-### Build from source (recommended for parrot/kali linux)
-
-To build the project, follow these instructions:
-
-**Step 1: Clone the Repository**
-
+### Optional Wordlists and Malware Signatures
+These files (700MB) can be downloaded using:  
 ```bash
-git clone https://github.com/cosmic-zip/witchcraft.git --branch=main --depth 1
-cd witchcraft
+git clone https://github.com/cosmic-zip/witchcraft-wordlists /var/spellbook/
 ```
 
-**Step 2: Run the Build Script**
-
-Execute the provided build script build.sh:
-
+# EVILPAGES
+Clone pages into `/var/spellbook/evilpages` using the SingleFile extension or similar tools. Example:  
 ```bash
-chmod +x build-devel.sh
-./build-devel.sh
+witchcraft server.eviltwin --address 127.0.0.1:9000 --path foo/bar/index.html
 ```
+[SingleFile Extension](https://addons.mozilla.org/en-US/firefox/addon/single-file/)
 
-The script will prompt you to enter the root password, create a folder called 'release,' and place the built executables inside it. Additionally, it will prompt you to run the commands for downloading the archive files for OSINT and wordlists. You can choose to download one, both, or neither, but keep in mind that the archives are required for ip lookup operations.
+# RC FILE
+To log interactions, create `.witchrc` in your home folder and add:  
+```plaintext
+path_log_file=~/my_frog.jsonl
+```
+Replace `~/` with a specific path if desired.
 
-**Running Witch_Craft**
+# FLAGS SCLF
+Standard Command-Line Flags (SCLF) include:
 
-Execute the following command to run the witchcraft application:
+- `account`          : Arguments for account info or token.
+- `address`          : IPv4/IPv6 or domain name.
+- `ip`               : IPv4/IPv6 address.
+- `device`           : Virtual/physical device (e.g., HDD, SSD).
+- `dns/domain`       : Domain name.
+- `database_name`    : Name of the database.
+- `data`             : Input data (e.g., "some data here!").
+- `file`             : File location.
+- `folder`           : Path to a folder.
+- `host`             : Hostname or IP address.
+- `image`            : Image file location.
+- `interface`        : Network device.
+- `keyspace_name`    : Cassandra keyspace name.
+- `message`          : Message string.
+- `output`           : Output file path.
+- `overwrite`        : Overwrite existing files.
+- `password`         : Plaintext password.
+- `path`             : File path.
+- `port`             : Port number.
+- `protocol`         : Communication protocol.
+- `recursive`        : Enable recursive mode.
+- `secret`           : File (data) to be hidden.
+- `share`            : Shared resource (e.g., folder, file, printer).
+- `snapshot_name`    : Name of the snapshot.
+- `table_name`       : Database table name.
+- `target`           : IPv4/IPv6 or domain name.
+- `timeout`          : Timeout duration.
+- `url`              : Full URL path with http/https.
+- `username`         : Username setup.
+- `wait`             : Delay duration in seconds.
+- `verbose`          : Enable verbose mode.
+- `wordlist`         : Path to a wordlist.
 
+# PLUGINS
+Witchcraft supports extensions via static files, Rust code, and `db.json`. This file allows integration of terminal-based operations. Example:
+
+**Custom Command in Terminal:**
 ```bash
-witchcraft
+mycommand --flag value --key value --some foo
 ```
 
-**Note**: The first argument will always not have a "-" (minus) before it.
-
-#### This script will run like:
-
-```bash
-witchcraft nuke.hd --device /dev/sdx1
-```
-
-```bash
-witchcraft search.meta --keywork "Anonymous"
-```
-
-```bash
-witchcraft search.ipscore --ip 127.0.0.1
-```
-
-### Plugins
-
-The witchcraft project is extensible through static files and Rust code. Moreover, it is possible to extend its functionalities using `db.json`. This file contains a list of small shell scripts, which means you can integrate anything that interacts with the terminal using ARGS (argsv, readargs(), sys.args(), etc).
-
-**Note**: There is a Python script called sort.py inside /var/witchcraft/spellbook/dataset. It is used to create a sorted version of the dataset.
-
+**Entry in `db.json`:**
 ```json
 {
-    "description": "Securely deletes and overwrites the contents of a device seven times",
-    "name": "nuke.hd",
-    "command": "shred -vzn 7 @@device"
+  "name": "mycommand",
+  "description": "My command does something cool",
+  "command": "mycommand --flag @@flag --key @@some_name_for_the_key"
 }
 ```
 
-### Evilpages
-
-Put your cloned pages in /var/witchcraft/spellbook/evilpages. Use the SingleFile extension or a similar tool to clone webpages:
-
-https://addons.mozilla.org/en-US/firefox/addon/single-file/
-
-### RC File
-
-To record logs of all your interactions, create a file named `.witchrc` in your home folder and add the following line to it:
-
-```txt
-path_log_file=~/my_frog.jsonl
+**Final Command in Witchcraft:**
+```bash
+mycommand --flag foo --some_name_for_the_key bar
 ```
 
-You can use `~/` to represent your home directory or specify the complete path, such as:
+You can assign any name to a flag. Note that flags are not positional.
+Repeating a flag will not create a list of values. If a flag is repeated,
+only the first occurrence will be accepted. This design covers 98% of CLI
+interactions. Edge cases are not supported.
 
-```txt
-path_log_file=/path/to/my/file.jsonl
-```
 
-### License
+# LICENSE AND TERMS
+This project is licensed under the **GNU General Public License v3.0**.  
+WITCHCRAFT includes **IP2Proxy® LITE** and **cinsscore®** databases.
 
-<p align="center">
-  🎉 This project is licensed under the GNU General Public License v3.0.
-</p>
-
-**WITCHCRAFT includes IP2Proxy LITE data available from https://www.ip2location.com/proxy-database**
-**WITCHCRAFT includes cinsscore data available from https://www.cinsscore.com**
+---

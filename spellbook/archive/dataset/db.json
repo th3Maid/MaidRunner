@@ -1,6 +1,16 @@
 {
     "general": [
         {
+            "name": "a",
+            "description": "🟠 Section A",
+            "command": ""
+        },
+        {
+            "name": "b",
+            "description": "🟠 Section B",
+            "command": ""
+        },
+        {
             "name": "backup.amazon_dynamodb",
             "description": "Amazon DynamoDB backup",
             "command": "aws dynamodb create-backup --table-name @@table_name --backup-name dynamodb_backup_$(date +%F_%T) > /var/backup/dynamodb_backup.json"
@@ -111,6 +121,11 @@
             "command": "rfkill list"
         },
         {
+            "name": "c",
+            "description": "🟠 Section C",
+            "command": ""
+        },
+        {
             "name": "capture.all",
             "description": "Capture all packets on a specified network interface.",
             "command": "tcpdump -i @@interface -w capture.pcap"
@@ -156,6 +171,11 @@
             "command": "hashcat -m 13600 -a 0 @@file @@wordlist"
         },
         {
+            "name": "d",
+            "description": "🟠 Section D",
+            "command": ""
+        },
+        {
             "name": "disk.dump",
             "description": "Create a disk dump from a specified input device to an output file.",
             "command": "dd if=@@device of=@@file bs=4M"
@@ -174,6 +194,16 @@
             "name": "dos.spam",
             "description": "Send and X number of get requests without data",
             "command": "dos.spam @@domain @@times"
+        },
+        {
+            "name": "e",
+            "description": "🟠 Section E",
+            "command": ""
+        },
+        {
+            "name": "f",
+            "description": "🟠 Section F",
+            "command": ""
         },
         {
             "name": "fhide.embed",
@@ -206,11 +236,6 @@
             "command": "lsof @@file"
         },
         {
-            "name": "file.str",
-            "description": "Strings alias",
-            "command": "strings @@file"
-        },
-        {
             "name": "file.clean.meta",
             "description": "Removes all metadata from an image to protect privacy",
             "command": "exiftool -all= @@image"
@@ -241,6 +266,11 @@
             "command": "exiftool @@file"
         },
         {
+            "name": "file.str",
+            "description": "Strings alias",
+            "command": "strings @@file"
+        },
+        {
             "name": "firewall.drop.bigger",
             "description": "Drop all outcome port bigger than expecified port",
             "command": "iptables -A OUTPUT -p tcp --dport @@port: -j DROP && iptables -A OUTPUT -p udp --dport @@port: -j DROP && ip6tables -A OUTPUT -p tcp --dport @@port: -j DROP &&    ip6tables -A OUTPUT -p udp --dport @@port: -j DROP"
@@ -266,9 +296,44 @@
             "command": "ftp @@address"
         },
         {
-            "name": "qrcode",
-            "description": "Create a QR code from the provided data.",
-            "command": "qrcode @@data"
+            "name": "g",
+            "description": "🟠 Section G",
+            "command": ""
+        },
+        {
+            "name": "h",
+            "description": "🟠 Section H",
+            "command": ""
+        },
+        {
+            "name": "i",
+            "description": "🟠 Section I",
+            "command": ""
+        },
+        {
+            "name": "j",
+            "description": "🟠 Section J",
+            "command": ""
+        },
+        {
+            "name": "k",
+            "description": "🟠 Section K",
+            "command": ""
+        },
+        {
+            "name": "l",
+            "description": "🟠 Section L",
+            "command": ""
+        },
+        {
+            "name": "m",
+            "description": "🟠 Section M",
+            "command": ""
+        },
+        {
+            "name": "maidz",
+            "description": "An cute cat girl tells you basic system information like neofetch",
+            "command": "maidz"
         },
         {
             "name": "map.auth",
@@ -321,6 +386,11 @@
             "command": "nmap -T3 -D RND:8 --script vuln @@target"
         },
         {
+            "name": "n",
+            "description": "🟠 Section N",
+            "command": ""
+        },
+        {
             "name": "nuke.file",
             "description": "Securely overwrites and deletes a file seven times, then removes it from the filesystem to prevent data recovery.",
             "command": "shred -u -z -n 7 @@file"
@@ -336,9 +406,64 @@
             "command": "sudo find /var/log -type f -exec shred -u {} \\;"
         },
         {
+            "name": "o",
+            "description": "🟠 Section O",
+            "command": ""
+        },
+        {
+            "name": "p",
+            "description": "🟠 Section P",
+            "command": ""
+        },
+        {
+            "name": "q",
+            "description": "🟠 Section Q",
+            "command": ""
+        },
+        {
+            "name": "qrcode",
+            "description": "Create a QR code from the provided data.",
+            "command": "qrcode @@data"
+        },
+        {
+            "name": "r",
+            "description": "🟠 Section R",
+            "command": ""
+        },
+        {
+            "name": "s",
+            "description": "🟠 Section S",
+            "command": ""
+        },
+        {
             "name": "scp.copy",
             "description": "Creates a directory named 'out' and copies files from a specified folder to a remote host via SCP.",
             "command": "mkdir out && scp -P @@port @@folder/* hostuser@@@ip:./out/"
+        },
+        {
+            "name": "search.ans",
+            "description": "Search ans for ipv4 and ipv6",
+            "command": "search.ans @@ip ip_address"
+        },
+        {
+            "name": "search.geoloc",
+            "description": "Geolocation search for coordinates",
+            "command": "search.geoloc @@ip ip_address"
+        },
+        {
+            "name": "search.ipscore",
+            "description": "IP scoring for security (CIN score)",
+            "command": "search.ipscore @@ip ip_address"
+        },
+        {
+            "name": "search.meta",
+            "description": "Social media profile search in over 1000 platforms",
+            "command": "search.social @@keyword nickname"
+        },
+        {
+            "name": "search.proxy",
+            "description": "Search proxy for IP routing",
+            "command": "search.proxy @@ip ip_address"
         },
         {
             "name": "self.setup",
@@ -371,9 +496,24 @@
             "command": "curl -X POST -H \"Content-Type: application/json\" -d '{\"main\": \"somename\", \"@@message\": \"somemsg\"}' @@domain"
         },
         {
+            "name": "t",
+            "description": "🟠 Section T",
+            "command": ""
+        },
+        {
             "name": "tldr",
             "description": "The tldr command is a collection of community-maintained help pages for command-line tools from the tldr-pages project, that aims to be a simpler, more approachable complement to traditional man pages.",
             "command": "tldr @@page"
+        },
+        {
+            "name": "u",
+            "description": "🟠 Section U",
+            "command": ""
+        },
+        {
+            "name": "v",
+            "description": "🟠 Section V",
+            "command": ""
         },
         {
             "name": "maidz",
@@ -456,9 +596,29 @@
             "command": "last -n 1000"
         },
         {
+            "name": "w",
+            "description": "🟠 Section W",
+            "command": ""
+        },
+        {
             "name": "web.download",
             "description": "Full website downloader",
             "command": "wget --recursive -U 'Mozilla/5.0 (X11; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0' --page-requisites --html-extension --convert-links --restrict-file-names=windows --random-wait --wait=@@wait --limit-rate=200k --tries=inf --domains example.com --no-parent @@url"
+        },
+        {
+            "name": "x",
+            "description": "🟠 Section X",
+            "command": ""
+        },
+        {
+            "name": "y",
+            "description": "🟠 Section Y",
+            "command": ""
+        },
+        {
+            "name": "z",
+            "description": "🟠 Section Z",
+            "command": ""
         }
     ]
 }

@@ -9,8 +9,8 @@ use super::core::raise;
 
 #[derive(Debug, Deserialize)]
 struct JsonEntry {
-    description: String,
     name: String,
+    description: String,
     command: String,
 }
 

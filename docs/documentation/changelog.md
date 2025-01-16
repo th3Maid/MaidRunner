@@ -519,3 +519,21 @@ Date: Fri Nov 29 10:50:24 AM -03 2024
 -   Updated spellbook
 -   Updated version
 -   Updated readme/consts/snapfile
+
+Version 0.34.10
+
+Date: Mon Jan 13 16:28:26 2025 -0300
+
+-   Updated meta search
+-   Updated the spellbook
+
+Version 0.34.30
+
+Date: Thu Jan 16 02:19:43 PM -03 2025
+
+-   Added and fixed dataset/db.json sections, evilpages/default/index.html
+-   Added new help and manual page
+-   Fixed evil tcp server body output
+-   Fixed maunal FLAGS SCL to SCLF
+-   Split manual and help pages in to commands
+-   Replaced sample evilpage for a new one

@@ -15,4 +15,4 @@ for item in sorted_data:
 
 
 with open('db.json', 'w') as outfile:
-    json.dump({"general": ordered_general}, outfile, indent=2)
+    json.dump({"general": ordered_general}, outfile, indent=4)
