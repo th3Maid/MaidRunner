@@ -32,10 +32,10 @@ fn handle_client(mut stream: TcpStream, file_path: &str) {
 }
 
 pub fn evil_server(argsv: &[String]) -> i32 {
-    let addrr = search_value("addrr", argsv);
-    let file_path = search_key("path", argsv);
+    let addrr = search_value("address", argsv);
+    let file_path = search_value("path", argsv);
     let listener = TcpListener::bind(&addrr).unwrap();
-    println!("{}", format!("Listening on {}", &addrr));
+    println!("{}", format!("Listening on http://{}", &addrr));
 
     for stream in listener.incoming() {
         match stream {
