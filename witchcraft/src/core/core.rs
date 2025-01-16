@@ -272,15 +272,14 @@ pub fn magic_docs() -> i32 {
         return 42;
     }
 
-    println!("{}", PANZER_MAID);
-    raise(MAN_HEADER, "");
+    println!("\n\n");
 
     fn loop_parser(arg_name: &str) -> Vec<String> {
         for tuple in MAGIC_DOCS {
             if tuple.0 == arg_name.replace("--", "") {
                 return witch_fmt(
                     &format!("{}--{} :: {}", " ".repeat(8), tuple.0, tuple.1),
-                    80,
+                    120,
                 );
             }
         }
