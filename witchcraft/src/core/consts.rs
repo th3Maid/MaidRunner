@@ -128,8 +128,8 @@ RC FILE
 
     path_log_file=/path/to/my/file.jsonl
 
-FLAGS SCL
-    Standard Command-Line Flags: All commands managed by the Witchcraft engine
+FLAGS SCLF
+    Standard Command-Line Flags (SCLF): All commands managed by the Witchcraft engine
     use standardized flags. If you plan to add new commands to the spellbook
     (db.json), please follow this convention.
 
