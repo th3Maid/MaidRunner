@@ -11,6 +11,21 @@
             "command": ""
         },
         {
+            "name": "mac.spoff",
+            "description": "Change to a Random MAC Address",
+            "command": "macchanger -r @@interface"
+        },
+        {
+            "name": "mac.reset",
+            "description": "Reset to the Original MAC Address",
+            "command": "macchanger -p @@interface"
+        },
+        {
+            "name": "mac.define",
+            "description": "Change to a Random MAC Address",
+            "command": "macchanger -m @@mac @@interface"
+        },
+        {
             "name": "backup.amazon_dynamodb",
             "description": "Amazon DynamoDB backup",
             "command": "aws dynamodb create-backup --table-name @@table_name --backup-name dynamodb_backup_$(date +%F_%T) > /var/backup/dynamodb_backup.json"

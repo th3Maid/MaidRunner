@@ -12,6 +12,21 @@
             ]
         },
         {
+            "url": "https://dev.to/@@keyword",
+            "category": "Computers Electronics and Technology > Programming and Developer Software",
+            "global_rank": 999,
+            "country": "United States",
+            "nsfw": "false",
+            "match_positive": [
+                "comments written",
+                "posts published",
+                "tags followed"
+            ],
+            "match_negative": [
+                "This page does not exist"
+            ]
+        },
+        {
             "url": "https://500px.com/p/@@keyword",
             "category": "Hobbies and Leisure > Photography",
             "global_rank": 0,
