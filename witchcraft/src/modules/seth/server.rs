@@ -34,6 +34,40 @@ fn handle_client(mut stream: TcpStream, file_path: &str) {
     stream.flush().unwrap();
 }
 
+/// Starts an "evil" HTTP server that listens for incoming TCP connections and serves files.
+///
+/// # Parameters
+/// - `argsv`: A slice of `String` arguments typically passed from the command line.
+///   The function expects the following parameters:
+///   - `"address"`: The address and port to bind the server to, e.g., `127.0.0.1:8080`.
+///   - `"path"`: The file path to serve content from.
+///
+/// # Returns
+/// - Returns an `i32` exit code, where `0` indicates successful server termination.
+///
+/// # Behavior
+/// 1. The server binds to the address specified by the `address` argument.
+/// 2. It prints the address where it is listening, in the format: `Listening on http://<address>`.
+/// 3. The server continuously accepts incoming TCP connections:
+///    - For each connection, it calls the `handle_client` function with the stream and file path.
+///    - If an error occurs while accepting a connection, it logs the error and raises it using the `raise` function.
+///
+/// # Panics
+/// - If the server cannot bind to the specified address, the program will panic with an `unwrap` on the `TcpListener::bind` call.
+///
+/// # Example
+/// ```rust
+/// let args = vec![
+///     "program".to_string(),
+///     "--address".to_string(),
+///     "127.0.0.1:8080".to_string(),
+///     "--path".to_string(),
+///     "/var/www/index.html".to_string(),
+/// ];
+///
+/// let exit_code = evil_server(&args);
+/// println!("Server exited with code: {}", exit_code);
+/// ```
 pub fn evil_server(argsv: &[String]) -> i32 {
     let addrr = search_value("address", argsv);
     let file_path = search_value("path", argsv);
