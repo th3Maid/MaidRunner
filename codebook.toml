@@ -1,0 +1,4 @@
+dictionaries = []
+words = ["wordlists"]
+flag_words = []
+ignore_paths = []
