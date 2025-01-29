@@ -5,7 +5,7 @@ use crate::modules::binds::sysinfo::maid_info;
 use crate::modules::blackcat::backend::blackcat_av;
 use crate::modules::network::structs::*;
 use crate::modules::osint::meta_search::*;
-use crate::modules::social::qrcode::gen_qrcode_from_argsv;
+use crate::modules::seth::qrcode::gen_qrcode_from_argsv;
 
 #[test]
 fn test_string_to_command() {
