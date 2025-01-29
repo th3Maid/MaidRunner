@@ -1,6 +1,6 @@
 name: witchcraft-cybersecurity
 version: "0.34.30"
-summary: Your OPSEC companion. Now with tldr-pages integration!
+summary: witchcraft - A versatile toolkit for cybersecurity.
 grade: stable
 confinement: strict
 base: core24
@@ -8,50 +8,6 @@ type: app
 compression: lzo
 license: GPL-3.0+
 source-code: https://github.com/cosmic-zip/witchcraft
-description: |
-  **WITCHCRAFT**
-
-  WITCHCRAFT is a toolkit for cybersecurity. It handles forensic research, OSINT, scanning, backups, data copying, and penetration testing for apps and APIs, serving as a flexible platform for diverse security tasks.
-
-  **Visit the wiki:**
-
-  https://cosmic-zip.github.io/wiki/wiki.html
-
-  **Plugins**
-
-  The Witch_Craft project is extensible through static files and Rust code. Moreover, it is possible to extend its functionalities using `db.json`. This file contains a list of small shell scripts, which means you can integrate anything that interacts with the terminal using ARGS (argsv, readargs(), sys.args(), etc).
-
-  **Note**: There is a Python script called sort.py inside /var/witchcraft/spellbook/dataset. It is used to create a sorted version of the dataset.
-
-  **RC File**
-
-  To record logs of all your interactions, create a file named .witchrc in your home folder and add the following line to it:
-
-  path_log_file=~/my_frog.jsonl
-
-  You can use ~/ to represent your home directory or specify the complete path, such as:
-
-  path_log_file=/path/to/my/file.jsonl
-
-
-  **Instalation**
-
-  The project initially includes a set of default files. These files
-  are created using the best possible data analysis techniques, and
-  their final versions are merged into the main project.
-
-  The spellbook package also provide:
-
-    * Unique Wordlists : _moth_ (16Gb) and _ladybug_ (1Gb)
-    * Default Credentials Database
-    * IP Geolocation
-    * IP Reputation/Score
-    * A Set of Social Media Pages for Evil Twin Attacks
-    * General Wordlists for Directories and Subdomains
-    * MAC Address Vendor Database
-    * Usernames Wordlist
-    * XSS Wordlist
-    * And more, UwU!
 
 platforms:
   amd64:
