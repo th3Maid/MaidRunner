@@ -27,7 +27,7 @@ pub const MAGIC_DOCS: &[(&str, &str)] = &[
     ("file", "File location: like /some/path/file.txt"),
     ("folder", "Path to a folder"),
     ("host", "Host name or IPv4 or IPv6 address"),
-    ("image", "Image file location"),
+    ("image", "Path to a disk image file location"),
     (
         "interface",
         "Physical or virtual network device, e.g., wlan0",
@@ -35,16 +35,16 @@ pub const MAGIC_DOCS: &[(&str, &str)] = &[
     ("keyspace_name", "Cassandra database keyspace name"),
     ("message", "Provide a message string"),
     ("output", "Output file"),
-    ("overwite", "Overwrite existing files"),
+    ("overwrite", "Overwrite existing files"),
     (
         "password",
         "Specify the password; it will be shown in plaintext",
     ),
     ("path", "Path to a file"),
-    ("port", "Port number"),
+    ("port", "Network service port number"),
     ("protocol", "Communication protocol"),
     ("recursive", "Enable recursive mode"),
-    ("secret", "A file (data) to be hidden"),
+    ("secret", "An file (data) to be hidden"),
     (
         "share",
         "Refers to a shared resource like a folder, file, or printer",
@@ -55,7 +55,7 @@ pub const MAGIC_DOCS: &[(&str, &str)] = &[
     ),
     ("table_name", "Database table name"),
     ("target", "Refers to an IPv4 or IPv6 or domain name"),
-    ("timeout", "Timeout duration"),
+    ("timeout", "Timeout duration in seconds"),
     ("url", "Target complete URL path with http/https"),
     ("username", "Username; the user name to set up"),
     ("wait", "Delay duration in seconds"),
@@ -63,7 +63,7 @@ pub const MAGIC_DOCS: &[(&str, &str)] = &[
     ("wordlist", "Path to a wordlist"),
 ];
 
-pub const MAN_HEADER: &str = r#"
+pub const MAN_HEADER: &str = r##"
 
 NAME
     witchcraft - A versatile toolkit for cybersecurity.
@@ -87,14 +87,14 @@ EXAMPLES
     witchcraft map.default --target example.com
         Perform a default port scan on the specified target.
 
-INSTALATION
+INSTALLATION
     The project initially includes a set of default files. These files are
     created using the best possible data analysis techniques, and their final
     versions are merged into the main project.
 
     checkout de github link: https://github.com/cosmic-zip/witchcraft
 
-    go to releases and donwload the latest; unzip de the file and and find
+    go to releases and download the latest; unzip de the file and and find
     the installer.sh and uninstall.sh.
 
         run: sudo bash installer.sh
@@ -110,7 +110,7 @@ INSTALATION
         the installer.sh and uninstall.sh.
 
         The script will prompt you to enter the root password, create a folder called
-        'release,' and place the built executables inside it. Additionally, it will
+        'release,' and place the built executable inside it. Additionally, it will
         prompt you to run the commands for downloading the archive files for OSINT and
         wordlists. You can choose to download one, both, or neither, but keep in mind
         that the archives are required for ip lookup operations.
@@ -225,7 +225,7 @@ LICENSE AND TERMS
     WITCHCRAFT includes IP2Proxy® LITE and cinsscore® databases
 
 COMMANDS
-"#;
+"##;
 
 pub const MONTHERBOARD: &str = r#"
 
