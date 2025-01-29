@@ -1,7 +1,6 @@
 use crate::core::types::Closure;
-use crate::modules::seth::catfish::*;
-use crate::modules::seth::qrcode::*;
-use crate::modules::seth::server::*;
+// use crate::modules::seth::catfish::*;
+use crate::modules::seth::{qrcode::*, server::*};
 
 pub fn api() -> Closure {
     vec![
