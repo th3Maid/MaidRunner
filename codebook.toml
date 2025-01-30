@@ -1,4 +1,7 @@
 dictionaries = []
-words = ["wordlists"]
+words = [
+    "cybersecurity",
+    "wordlists",
+]
 flag_words = []
 ignore_paths = []
