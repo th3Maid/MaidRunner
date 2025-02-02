@@ -362,7 +362,7 @@ pub static WITCH: &str = r#"
      "M "M"    MMM     MMM      "YUMMMMMP" MMM    YMM  "YUMMMMMP" MMMM   "W"  YMM   ""`  "MM,        MMM
 
     ⚪ Hint :: help                > show a overall manual page
-    ⚪ Hint :: maunal              > show a complete manual page
+    ⚪ Hint :: manual              > show a complete manual page
     ⚪ Hint :: tldr --page command > show a tldr markdown about a command from linux/bsd/android/win/osx
 
 "#;
