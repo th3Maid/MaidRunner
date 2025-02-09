@@ -1,0 +1,7 @@
+dictionaries = []
+words = [
+    "cybersecurity",
+    "wordlists",
+]
+flag_words = []
+ignore_paths = []

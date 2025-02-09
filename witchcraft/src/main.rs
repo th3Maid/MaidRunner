@@ -6,7 +6,7 @@ use modules::{
     blackcat::blackcat,
     network::network,
     osint::osint,
-    social::social,
+    seth::seth,
     tldr::tldr,
 };
 
@@ -27,7 +27,7 @@ fn main() {
     join_closures.extend(blackcat::api());
     join_closures.extend(network::api());
     join_closures.extend(osint::api());
-    join_closures.extend(social::api());
+    join_closures.extend(seth::api());
     join_closures.extend(tldr::api());
 
     if arg_name == "help" || arg_name == "h" {
