@@ -6,6 +6,7 @@ use crate::core::structs::DataSet;
 use chrono;
 use regex::Regex;
 use std::env;
+use std::fmt::format;
 use std::fs;
 use std::io;
 use std::io::Write;
@@ -445,7 +446,13 @@ pub fn raw_exec(command_line: String) -> Option<Output> {
 pub fn lazy_exec(command_line: String) -> i32 {
     match raw_exec(command_line.clone()) {
         Some(output) => {
-            core_logger(&output, &command_line);
+            if !core_logger(&output, &command_line) {
+                raise(
+                    "Logger are enabled, but the log files was being created",
+                    "fail",
+                );
+            }
+
             if output.status.success() {
                 let stdout = String::from_utf8_lossy(&output.stdout);
                 let lines = stdout.split("\n");
@@ -692,6 +699,20 @@ pub fn get_os_env(key: &str) -> String {
             String::new()
         }
     }
+}
+
+// A variation of get_os_env function that handle better the home variable.
+pub fn get_os_env_paths_only(path: &str) -> String {
+    let largatixa = get_os_env(path).to_string();
+
+    if largatixa.is_empty() {
+        return "./".to_string();
+    }
+
+    if largatixa.ends_with("/") {
+        return largatixa;
+    }
+    return format!("{}/", largatixa);
 }
 
 /// Show witchcraft software version!

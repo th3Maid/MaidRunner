@@ -98,13 +98,14 @@ impl WitchyLogger {
     pub fn save(&self) -> String {
         let output = serde_json::to_string(self).unwrap();
         let witchrc = witchy_readrc_value("path_log_file");
-        let home = get_os_env("HOME");
+        let home = get_os_env_paths_only("HOME");
 
         if witchrc.is_empty() || home.is_empty() {
             return String::new();
         }
 
         let path = witchrc.replace("~/", &home);
+        println!("{}", path);
         let file = OpenOptions::new()
             .create(true)
             .write(true)
@@ -114,7 +115,10 @@ impl WitchyLogger {
         match file {
             Ok(mut file) => writeln!(file, "{}", output).unwrap(),
             Err(err) => {
-                raise(&format!("WitchyLogger :: {}", err.to_string()), "fail");
+                raise(
+                    &format!("WitchyLogger :: {} | path :: {}", err.to_string(), path),
+                    "fail",
+                );
             }
         };
 
@@ -159,7 +163,7 @@ impl WitchyLogger {
 /// for debugging and record-keeping purposes.
 pub fn core_logger(output: &Output, command_line: &String) -> bool {
     if rc_exists() == false {
-        return true;
+        return false;
     }
 
     let logger = WitchyLogger::new(
