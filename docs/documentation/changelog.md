@@ -555,6 +555,7 @@ Version: 0.36.10
 Date: Mon Feb 17 10:35:09 AM -03 2025
 
 - Added progress indicator
+- Added new build-devel script
 - Added logger function for rust functions, not only sub process
 - Fixed get system environment paths
 - Fixed panzer banner size
