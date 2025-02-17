@@ -131,7 +131,7 @@ INSTALLATION
 
     The spellbook package provide:
 
-        * Unique Wordlists : _moth_ (16Gb) and _ladybug_ (1Gb)
+        * Unique Wordlists : _moth_ and _ladybug_
         * Default Credentials Database
         * IP Geolocation
         * IP Reputation/Score
@@ -142,11 +142,11 @@ INSTALLATION
         * XSS Wordlist
         * And more, UwU!
 
-    Wordlists and Malware sigs are too big 700Mb so, if you want or need then
-    just run:
+        The spellbook has now been fully compressed and is 590MB in size. To download it,
+        please check the README page for the updated link. If you are using the complete
+        distribution package, you do not need to perform this step.
 
-    git clone https://github.com/cosmic-zip/witchcraft-wordlists /var/spellbook/
-
+        To install the complete spellbook, simply download and copy it to: /var/spellbook
 
 EVILPAGES
     Put your cloned pages in /var/spellbook/evilpages. Use the SingleFile extension
@@ -346,5 +346,6 @@ pub static BOTTOM_TEXT: &str = r#"
     ⚪ Hint :: help                > show a overall manual page
     ⚪ Hint :: manual              > show a complete manual page
     ⚪ Hint :: tldr --page command > show a tldr markdown about a command from linux/bsd/android/win/osx
+    ⚪ Hint :: The spellbook installed is a ligth version, read the docs to know more
 
 "#;
