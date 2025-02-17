@@ -57,7 +57,8 @@ fn init(argsv: Vec<String>) {
 fn main() {
     let argsv = readargs();
     if argsv.len() % 2 != 0 {
-        println!("{}", WITCH);
+        println!("{}", PANZER_MAID);
+        println!("{}", BOTTOM_TEXT);
         process::exit(42);
     }
 
