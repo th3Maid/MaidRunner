@@ -4,14 +4,16 @@ use crate::core::data::*;
 use crate::core::logger::core_logger;
 use crate::core::structs::DataSet;
 use chrono;
-use colored::*;
 use regex::Regex;
 use std::env;
 use std::fs;
+use std::io;
+use std::io::Write;
 use std::net::IpAddr;
 use std::path::Path;
 use std::process::{Command, Output};
 use std::str::FromStr;
+use termimad::crossterm::style::Stylize;
 
 /// Reads command line arguments and returns them as a `Vec<String>`.
 ///
@@ -123,7 +125,7 @@ pub fn raise(arg: &str, warning_type: &str) -> String {
 
     let formatted_output = format!("{} {}", out.to_uppercase(), arg);
 
-    println!("{}", formatted_output.bold());
+    println!("{}", formatted_output.clone().bold().magenta());
     formatted_output
 }
 
@@ -447,10 +449,12 @@ pub fn lazy_exec(command_line: String) -> i32 {
             if output.status.success() {
                 let stdout = String::from_utf8_lossy(&output.stdout);
                 let lines = stdout.split("\n");
+                println!("{}", " ".repeat(85));
                 for line in lines {
                     let result = witch_fmt(line, 180);
                     for line in result {
                         println!("\t{}", line);
+                        io::stdout().flush().unwrap();
                     }
                 }
             } else {

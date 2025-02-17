@@ -6,6 +6,19 @@ pub const DBPATH: &str = "dataset/db.json";
 pub const WITCH_SPELLS_ROOT_DIR: &str = "/var/spellbook/archive/";
 pub const VERSION: &str = "Version: 0.35.10 by cosmic-zip";
 
+pub const PROGRESS_BAR: [&'static str; 10] = [
+    "█▒▒▒▒▒▒▒▒▒ 10% ",
+    "██▒▒▒▒▒▒▒▒ 20% ",
+    "███▒▒▒▒▒▒▒ 30% ",
+    "████▒▒▒▒▒▒ 40% ",
+    "█████▒▒▒▒▒ 50% ",
+    "██████▒▒▒▒ 60% ",
+    "███████▒▒▒ 70% ",
+    "████████▒▒ 80% ",
+    "█████████▒ 90% ",
+    "██████████ 100%",
+];
+
 pub const MAGIC_DOCS: &[(&str, &str)] = &[
     ("account", "Generic arguments for account info or token"),
     (
