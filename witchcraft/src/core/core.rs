@@ -6,7 +6,6 @@ use crate::core::structs::DataSet;
 use chrono;
 use regex::Regex;
 use std::env;
-use std::fmt::format;
 use std::fs;
 use std::io;
 use std::io::Write;
@@ -198,7 +197,7 @@ pub fn search_value(key: &str, argsv: &[String]) -> String {
 /// let value = search_key("config", &argsv);
 /// assert_eq!(value, "release");
 /// ```
-pub fn search_key(key: &str, argsv: &[String]) -> String {
+pub fn _search_key(key: &str, argsv: &[String]) -> String {
     for item in argsv {
         if item == key {
             return item.to_string();

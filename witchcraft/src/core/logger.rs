@@ -213,6 +213,7 @@ pub fn core_logger(output: &Output, command_line: &String) -> bool {
 /// let success = doglog("output", "status", "error", "true_val", "metadata");
 /// assert!(success);
 /// ```
+#[allow(dead_code)]
 pub fn doglog(
     cmd_output: &str,
     cmd_status: &str,
