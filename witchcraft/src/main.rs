@@ -59,6 +59,7 @@ fn main() {
     if argsv.len() % 2 != 0 {
         println!("{}", PANZER_MAID);
         println!("{}", BOTTOM_TEXT);
+        io::stdout().flush().unwrap();
         process::exit(42);
     }
 
@@ -80,7 +81,6 @@ fn main() {
                 "[] Processing, please wait (or not, do whatever you want) : {} milliseconds {}\r",
                 counter, spinner_chars[icon]
             );
-
             print!("{}", msg.bold().magenta());
             io::stdout().flush().unwrap();
 

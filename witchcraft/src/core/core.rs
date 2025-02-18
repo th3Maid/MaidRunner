@@ -123,7 +123,14 @@ pub fn raise(arg: &str, warning_type: &str) -> String {
         _ => "", // Empty message
     };
 
-    let formatted_output = format!("{} {}", out.to_uppercase(), arg);
+    let mut formatted_output = format!("{} {}", out.to_uppercase(), arg);
+    if formatted_output.len() < 120 {
+        formatted_output = format!(
+            "{}{}",
+            formatted_output,
+            " ".repeat(120 - formatted_output.len())
+        );
+    }
 
     println!("{}", formatted_output.clone().bold().magenta());
     formatted_output
@@ -455,7 +462,6 @@ pub fn lazy_exec(command_line: String) -> i32 {
             if output.status.success() {
                 let stdout = String::from_utf8_lossy(&output.stdout);
                 let lines = stdout.split("\n");
-                println!("{}", " ".repeat(85));
                 for line in lines {
                     let result = witch_fmt(line, 180);
                     for line in result {
@@ -578,6 +584,7 @@ pub fn directory_lookup(dir: &Path) -> Vec<String> {
 pub fn closure_shell(options: Closure, argsv: &[String]) -> i32 {
     if argsv.len() % 2 != 0 {
         println!("{}", WITCH);
+        println!("{}", BOTTOM_TEXT);
         return 0;
     }
 

@@ -24,7 +24,6 @@ use std::fs;
 /// home directory. If the environment variable is not set, the behavior may be undefined.
 pub fn rc_exists() -> bool {
     let home = format!("{}.witchrc", get_os_env_paths_only("HOME"));
-    println!("{}", home);
     fs::metadata(home).is_ok()
 }
 

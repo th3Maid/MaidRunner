@@ -105,7 +105,6 @@ impl WitchyLogger {
         }
 
         let path = witchrc.replace("~/", &home);
-        println!("{}", path);
         let file = OpenOptions::new()
             .create(true)
             .write(true)
